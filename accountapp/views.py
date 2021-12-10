@@ -28,4 +28,7 @@ def hello_world(request):
 
         return Response(serializer.data)
 
-    return Response({"message": 'Return TEXT'})
+    new_model_list = NewModel.objects.all()
+    serializer = NewModelSerializer(new_model_list, many=True)      # 다수의 객체 serializer 시켜주는 부분
+
+    return Response(serializer.data)
