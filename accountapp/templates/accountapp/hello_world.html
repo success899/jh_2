@@ -1,57 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <input id="input_data" type="text">
-    <input value="제출" type="button" onclick="send_input()">
+{% block content %}
 
-    <h1 id="text">Hello World!</h1>
+    <body>
+
+        <input id="input_data" type="text">
+        <input value="제출" type="button" onclick="send_input()">
+
+        <h1 id="text">Hello World!</h1>
 
 
-</body>
+    </body>
 
-<script>
+    <script>
 
-    function send_input() {
-        axios.post('/accounts/hello_world/', {
-            input_data: document.getElementById('input_data').value,
-          })
+        function send_input() {
+            axios.post('/accounts/hello_world/', {
+                input_data: document.getElementById('input_data').value,
+              })
+              .then(function (response) {
+                // POST 요청이 성공했을 경우 어떤 javascript 가 구동되어야 하는지에 대한 부분
+                console.log(response);
+
+                document.getElementById('text').innerHTML = response.data['message'];   // 입력받은 text를 찾음
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+        }
+
+
+
+        <!-- 서버 호출 -->
+        axios.get('/accounts/hello_world/')
           .then(function (response) {
-            // POST 요청이 성공했을 경우 어떤 javascript 가 구동되어야 하는지
+            // handle success
             console.log(response);
 
-            document.getElementById('text').innerHTML = response.data['message'];   // 입력받은 text를 찾음
+            // 성공했을 경우 어떤 javascript 작업을 할지
+
+            document.getElementById('text').innerHTML = response.data['message'];   //Return TEXT 를 찾음
+
           })
           .catch(function (error) {
+            // handle error
             console.log(error);
+          })
+          .then(function () {
+            // always executed
           });
-    }
+    </script>
 
-
-
-    <!-- 서버 호출 -->
-    axios.get('/accounts/hello_world/')
-      .then(function (response) {
-        // handle success
-        console.log(response);
-
-        // 성공했을 경우 어떤 javascript 작업을 할지
-
-        document.getElementById('text').innerHTML = response.data['message'];   //Return TEXT 를 찾음
-
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
-</script>
-
-</html>
+{% endblock %}
