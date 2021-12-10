@@ -32,3 +32,8 @@ def hello_world(request):
     serializer = NewModelSerializer(new_model_list, many=True)      # 다수의 객체 serializer 시켜주는 부분
 
     return Response(serializer.data)
+
+
+
+def AccountCreateTemplate(request):
+    return render(request, 'accountapp/create.html')
