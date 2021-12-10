@@ -7,7 +7,8 @@ function send_input() {
         // POST 요청이 성공했을 경우 어떤 javascript 가 구동되어야 하는지에 대한 부분
         console.log(response);
 
-        document.getElementById('text').innerHTML = response.data['message'];   // 입력받은 text를 찾음
+        document.getElementById('text').innerHTML = response.data['text'];   // 입력받은 text를 찾음
+        document.getElementById('new_model_created_at').innerHTML = response.data['created_at'];
       })
       .catch(function (error) {
         console.log(error);

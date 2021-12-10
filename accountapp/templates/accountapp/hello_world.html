@@ -8,7 +8,8 @@
         <input id="input_data" type="text">
         <input value="제출" type="button" onclick="send_input()">
 
-        <h1 id="text">Hello World!</h1>
+        <h1 id="text">{{ new_model.text }}</h1>
+        <p id="new_model_created_at">{{ new_model.created_at }}</p>
 
 
         <script src="{% static 'js/hello_world.js' %}"></script>
