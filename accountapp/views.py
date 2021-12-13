@@ -45,3 +45,4 @@ class AccountCreateAPIView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = []
+
