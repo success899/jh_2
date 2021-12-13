@@ -10,7 +10,10 @@ function send_input() {
 
         document.getElementById('alert_box').innerHTML = "<div class='btn btn-primary rounded-pill px-5'>로그인이 성공했습니다.</div>";
 
-        window.location.href = '/accounts/hello_world_template/';
+        // Token 쿠키 생성 - 이렇게 하면 보안적으로 취약점이 있지만 동작을 보기 위해서 작성한 코드
+        document.cookie = "drf_token=Token " + response.data['token'];
+
+//        window.location.href = '/accounts/hello_world_template/';
 
       })
       .catch(function (error) {
