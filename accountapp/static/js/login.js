@@ -34,12 +34,11 @@ function send_input() {
         // POST 요청이 성공했을 경우 어떤 javascript 가 구동되어야 하는지에 대한 부분
         console.log(response);
 
-        document.getElementById('alert_box').innerHTML = "<div class='btn btn-primary rounded-pill px-5'>로그인이 성공했습니다.</div>";
-
         // Token 쿠키 생성 - 이렇게 하면 보안적으로 취약점이 있지만 동작을 보기 위해서 작성한 코드
         setCookie('drf_token', 'Token ' + response.data['token']);
 
-//        window.location.href = '/accounts/hello_world_template/';
+        // login redirect (success_url)
+        window.location.href = '/accounts/hello_world_template/';
 
       })
       .catch(function (error) {
