@@ -13,6 +13,6 @@ function initialize(pk) {
             console.log(error);
         })
         .then(function () {
-            // always executed
+             // always executed
         });
 }
