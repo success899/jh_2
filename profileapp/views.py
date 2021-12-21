@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -15,3 +16,6 @@ class ProfileCreateAPIView(CreateAPIView):
 
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
