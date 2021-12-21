@@ -3,17 +3,20 @@
 
 {% block content %}
 
-    <div class="my-5">
+<div class="my-5">
 
-        <input id="input_data" type="text">
-        <input value="제출" type="button" onclick="send_input()">
+    <input id="input_data" type="text">
+    <input value="제출" type="button" onclick="send_input()">
 
-        <h1 id="text">Hello World!</h1>
-        <p id="new_model_created_at"></p>
+    <h1 id="text">Hello World!</h1>
+    <p id="new_model_created_at"></p>
 
-        <div id="new_model_list"></div>
+    <div id="new_model_list">
 
-        <script src="{% static 'accountapp/js/hello_world.js' %}"></script>
     </div>
+
+</div>
+
+<script src="{% static 'accountapp/js/hello_world.js' %}"></script>
 
 {% endblock %}

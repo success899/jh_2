@@ -1,3 +1,4 @@
+
 function delete_account(pk) {
     axios({
         method: 'delete',

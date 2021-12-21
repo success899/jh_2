@@ -6,19 +6,18 @@
 
 <body class="text-center">
 
-    {% include 'header.html' %}
+{% include 'header.html' %}
 
-    <hr>
+<hr>
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
-    <hr>
+<hr>
 
-    {% include 'footer.html' %}
+{% include 'footer.html' %}
 
-    <script src="{% static 'accountapp/js/token_check.js' %}"></script>
-
+<script src="{% static 'accountapp/js/token_check.js' %}"></script>
 
 </body>
 </html>
