@@ -34,9 +34,13 @@ urlpatterns = [
 ]
 """
 ListCreateAPIView
+
 127.0.0.1:8000/accounts  + HTTP method + GET = LIST  => 지금 당장 필요 없음
 127.0.0.1:8000/accounts  + HTTP method + POST = Create
+
+
 RetrieveUpdateDestroyAPIView
+
 127.0.0.1:8000/accounts/1  + HTTP method + GET = Detail
 127.0.0.1:8000/accounts/1  + HTTP method + PUT / PATCH  = Update
 127.0.0.1:8000/accounts/1  + HTTP method + DELETE = Delete

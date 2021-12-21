@@ -58,3 +58,4 @@ class ArticleRUDAPIView(RetrieveUpdateDestroyAPIView):
             result_dict['is_page_owner'] = "False"
 
         return Response(result_dict)
+
