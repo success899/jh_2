@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'accountapp',
     'profileapp',
     'articleapp',
-
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
