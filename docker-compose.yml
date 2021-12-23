@@ -14,8 +14,6 @@ services:
       - gis_static:/data/static/
       - gis_media:/data/media/
       - gis_log:/var/log/nginx/
-    secrets:
-      - NGINX_AUTH
 
   django:
     image: jh_2:1.0
